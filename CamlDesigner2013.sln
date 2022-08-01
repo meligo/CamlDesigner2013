@@ -1,0 +1,220 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26206.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CamlDesigner2013", "CamlDesigner2013\CamlDesigner2013.csproj", "{357C8B37-B1E4-45A5-8C4F-1DEAA4593A1F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EA526E3A-C9C9-4AD6-BEAC-21ECFD9503B7} = {EA526E3A-C9C9-4AD6-BEAC-21ECFD9503B7}
+		{BBF5B1A1-6F68-4E65-8073-40F7544A4211} = {BBF5B1A1-6F68-4E65-8073-40F7544A4211}
+		{3E603FD0-2749-462D-BB4E-1FD5E62740B6} = {3E603FD0-2749-462D-BB4E-1FD5E62740B6}
+		{2F63BAE9-2A4A-4027-9937-C1A63731B17D} = {2F63BAE9-2A4A-4027-9937-C1A63731B17D}
+		{BAB4C1FC-3DFB-4E2C-9E8A-669019373B9C} = {BAB4C1FC-3DFB-4E2C-9E8A-669019373B9C}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BPoint.Common", "BPoint.Common\BPoint.Common.csproj", "{4949F499-F538-4AA7-B0E6-328CA892B958}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BPoint.DataAccess.WebServices", "BPoint.DataAccess.WebServices\BPoint.DataAccess.WebServices.csproj", "{BAB4C1FC-3DFB-4E2C-9E8A-669019373B9C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CamlDesigner.BusinessObjects", "CamlDesigner.BusinessObjects\CamlDesigner.BusinessObjects.csproj", "{24C8211C-C591-4336-A7DD-8ED4B921BE7E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BBF5B1A1-6F68-4E65-8073-40F7544A4211} = {BBF5B1A1-6F68-4E65-8073-40F7544A4211}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BPoint.DataAccess.SP2013.ClientObjectModel", "BPoint.DataAccess.SP2013.ClientObjectModel\BPoint.DataAccess.SP2013.ClientObjectModel.csproj", "{EA526E3A-C9C9-4AD6-BEAC-21ECFD9503B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CamlDesigner2013.PreviewControl", "CamlDesigner2013.HTMLPreview\CamlDesigner2013.PreviewControl.csproj", "{C5D65E02-1022-4226-842D-76AECEBC58D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BPoint.DataAccess.Powershell", "BPoint.DataAccess.Powershell\BPoint.DataAccess.Powershell.csproj", "{BBF5B1A1-6F68-4E65-8073-40F7544A4211}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CDDeployment", "CDDeployment\CDDeployment.csproj", "{5E18A4A3-C06C-4A99-A171-8CF0C51D5240}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BPoint.DataAccess.SPLinq", "BPoint.DataAccess.SPLync\BPoint.DataAccess.SPLinq.csproj", "{3E603FD0-2749-462D-BB4E-1FD5E62740B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CamlDesigner2013.Web", "CamlDesigner2013.Web\CamlDesigner2013.Web.csproj", "{9F2BB497-1AE6-4987-853F-C03547838D64}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClaimsAuth", "ClaimsAuth\ClaimsAuth.csproj", "{2F63BAE9-2A4A-4027-9937-C1A63731B17D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BPoint.DataAccess.SP2013.ServerObjectModel", "BPoint.DataAccess.SP2013.ServerObjectModel\BPoint.DataAccess.SP2013.ServerObjectModel.csproj", "{C320C927-F8C8-4FBC-BE48-0B0242734A42}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{357C8B37-B1E4-45A5-8C4F-1DEAA4593A1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{357C8B37-B1E4-45A5-8C4F-1DEAA4593A1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{357C8B37-B1E4-45A5-8C4F-1DEAA4593A1F}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{357C8B37-B1E4-45A5-8C4F-1DEAA4593A1F}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{357C8B37-B1E4-45A5-8C4F-1DEAA4593A1F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{357C8B37-B1E4-45A5-8C4F-1DEAA4593A1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{357C8B37-B1E4-45A5-8C4F-1DEAA4593A1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{357C8B37-B1E4-45A5-8C4F-1DEAA4593A1F}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{357C8B37-B1E4-45A5-8C4F-1DEAA4593A1F}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{357C8B37-B1E4-45A5-8C4F-1DEAA4593A1F}.Release|x86.ActiveCfg = Release|Any CPU
+		{4949F499-F538-4AA7-B0E6-328CA892B958}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4949F499-F538-4AA7-B0E6-328CA892B958}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4949F499-F538-4AA7-B0E6-328CA892B958}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{4949F499-F538-4AA7-B0E6-328CA892B958}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{4949F499-F538-4AA7-B0E6-328CA892B958}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4949F499-F538-4AA7-B0E6-328CA892B958}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4949F499-F538-4AA7-B0E6-328CA892B958}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4949F499-F538-4AA7-B0E6-328CA892B958}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{4949F499-F538-4AA7-B0E6-328CA892B958}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{4949F499-F538-4AA7-B0E6-328CA892B958}.Release|x86.ActiveCfg = Release|Any CPU
+		{BAB4C1FC-3DFB-4E2C-9E8A-669019373B9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAB4C1FC-3DFB-4E2C-9E8A-669019373B9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAB4C1FC-3DFB-4E2C-9E8A-669019373B9C}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{BAB4C1FC-3DFB-4E2C-9E8A-669019373B9C}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{BAB4C1FC-3DFB-4E2C-9E8A-669019373B9C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BAB4C1FC-3DFB-4E2C-9E8A-669019373B9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAB4C1FC-3DFB-4E2C-9E8A-669019373B9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAB4C1FC-3DFB-4E2C-9E8A-669019373B9C}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{BAB4C1FC-3DFB-4E2C-9E8A-669019373B9C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{BAB4C1FC-3DFB-4E2C-9E8A-669019373B9C}.Release|x86.ActiveCfg = Release|Any CPU
+		{24C8211C-C591-4336-A7DD-8ED4B921BE7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24C8211C-C591-4336-A7DD-8ED4B921BE7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24C8211C-C591-4336-A7DD-8ED4B921BE7E}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{24C8211C-C591-4336-A7DD-8ED4B921BE7E}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{24C8211C-C591-4336-A7DD-8ED4B921BE7E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{24C8211C-C591-4336-A7DD-8ED4B921BE7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24C8211C-C591-4336-A7DD-8ED4B921BE7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24C8211C-C591-4336-A7DD-8ED4B921BE7E}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{24C8211C-C591-4336-A7DD-8ED4B921BE7E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{24C8211C-C591-4336-A7DD-8ED4B921BE7E}.Release|x86.ActiveCfg = Release|Any CPU
+		{EA526E3A-C9C9-4AD6-BEAC-21ECFD9503B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA526E3A-C9C9-4AD6-BEAC-21ECFD9503B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA526E3A-C9C9-4AD6-BEAC-21ECFD9503B7}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{EA526E3A-C9C9-4AD6-BEAC-21ECFD9503B7}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{EA526E3A-C9C9-4AD6-BEAC-21ECFD9503B7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EA526E3A-C9C9-4AD6-BEAC-21ECFD9503B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA526E3A-C9C9-4AD6-BEAC-21ECFD9503B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA526E3A-C9C9-4AD6-BEAC-21ECFD9503B7}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{EA526E3A-C9C9-4AD6-BEAC-21ECFD9503B7}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{EA526E3A-C9C9-4AD6-BEAC-21ECFD9503B7}.Release|x86.ActiveCfg = Release|Any CPU
+		{C5D65E02-1022-4226-842D-76AECEBC58D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5D65E02-1022-4226-842D-76AECEBC58D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5D65E02-1022-4226-842D-76AECEBC58D4}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{C5D65E02-1022-4226-842D-76AECEBC58D4}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{C5D65E02-1022-4226-842D-76AECEBC58D4}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C5D65E02-1022-4226-842D-76AECEBC58D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5D65E02-1022-4226-842D-76AECEBC58D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5D65E02-1022-4226-842D-76AECEBC58D4}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{C5D65E02-1022-4226-842D-76AECEBC58D4}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{C5D65E02-1022-4226-842D-76AECEBC58D4}.Release|x86.ActiveCfg = Release|Any CPU
+		{BBF5B1A1-6F68-4E65-8073-40F7544A4211}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBF5B1A1-6F68-4E65-8073-40F7544A4211}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBF5B1A1-6F68-4E65-8073-40F7544A4211}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{BBF5B1A1-6F68-4E65-8073-40F7544A4211}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{BBF5B1A1-6F68-4E65-8073-40F7544A4211}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BBF5B1A1-6F68-4E65-8073-40F7544A4211}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBF5B1A1-6F68-4E65-8073-40F7544A4211}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBF5B1A1-6F68-4E65-8073-40F7544A4211}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{BBF5B1A1-6F68-4E65-8073-40F7544A4211}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{BBF5B1A1-6F68-4E65-8073-40F7544A4211}.Release|x86.ActiveCfg = Release|Any CPU
+		{5E18A4A3-C06C-4A99-A171-8CF0C51D5240}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E18A4A3-C06C-4A99-A171-8CF0C51D5240}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E18A4A3-C06C-4A99-A171-8CF0C51D5240}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{5E18A4A3-C06C-4A99-A171-8CF0C51D5240}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{5E18A4A3-C06C-4A99-A171-8CF0C51D5240}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5E18A4A3-C06C-4A99-A171-8CF0C51D5240}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E18A4A3-C06C-4A99-A171-8CF0C51D5240}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E18A4A3-C06C-4A99-A171-8CF0C51D5240}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{5E18A4A3-C06C-4A99-A171-8CF0C51D5240}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{5E18A4A3-C06C-4A99-A171-8CF0C51D5240}.Release|x86.ActiveCfg = Release|Any CPU
+		{3E603FD0-2749-462D-BB4E-1FD5E62740B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E603FD0-2749-462D-BB4E-1FD5E62740B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E603FD0-2749-462D-BB4E-1FD5E62740B6}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{3E603FD0-2749-462D-BB4E-1FD5E62740B6}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{3E603FD0-2749-462D-BB4E-1FD5E62740B6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3E603FD0-2749-462D-BB4E-1FD5E62740B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E603FD0-2749-462D-BB4E-1FD5E62740B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E603FD0-2749-462D-BB4E-1FD5E62740B6}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{3E603FD0-2749-462D-BB4E-1FD5E62740B6}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{3E603FD0-2749-462D-BB4E-1FD5E62740B6}.Release|x86.ActiveCfg = Release|Any CPU
+		{9F2BB497-1AE6-4987-853F-C03547838D64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F2BB497-1AE6-4987-853F-C03547838D64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F2BB497-1AE6-4987-853F-C03547838D64}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{9F2BB497-1AE6-4987-853F-C03547838D64}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{9F2BB497-1AE6-4987-853F-C03547838D64}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9F2BB497-1AE6-4987-853F-C03547838D64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F2BB497-1AE6-4987-853F-C03547838D64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F2BB497-1AE6-4987-853F-C03547838D64}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{9F2BB497-1AE6-4987-853F-C03547838D64}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{9F2BB497-1AE6-4987-853F-C03547838D64}.Release|x86.ActiveCfg = Release|Any CPU
+		{2F63BAE9-2A4A-4027-9937-C1A63731B17D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F63BAE9-2A4A-4027-9937-C1A63731B17D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F63BAE9-2A4A-4027-9937-C1A63731B17D}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{2F63BAE9-2A4A-4027-9937-C1A63731B17D}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{2F63BAE9-2A4A-4027-9937-C1A63731B17D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2F63BAE9-2A4A-4027-9937-C1A63731B17D}.Debug|x86.Build.0 = Debug|Any CPU
+		{2F63BAE9-2A4A-4027-9937-C1A63731B17D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F63BAE9-2A4A-4027-9937-C1A63731B17D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F63BAE9-2A4A-4027-9937-C1A63731B17D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{2F63BAE9-2A4A-4027-9937-C1A63731B17D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{2F63BAE9-2A4A-4027-9937-C1A63731B17D}.Release|x86.ActiveCfg = Release|Any CPU
+		{2F63BAE9-2A4A-4027-9937-C1A63731B17D}.Release|x86.Build.0 = Release|Any CPU
+		{C320C927-F8C8-4FBC-BE48-0B0242734A42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C320C927-F8C8-4FBC-BE48-0B0242734A42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C320C927-F8C8-4FBC-BE48-0B0242734A42}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{C320C927-F8C8-4FBC-BE48-0B0242734A42}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{C320C927-F8C8-4FBC-BE48-0B0242734A42}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C320C927-F8C8-4FBC-BE48-0B0242734A42}.Debug|x86.Build.0 = Debug|Any CPU
+		{C320C927-F8C8-4FBC-BE48-0B0242734A42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C320C927-F8C8-4FBC-BE48-0B0242734A42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C320C927-F8C8-4FBC-BE48-0B0242734A42}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{C320C927-F8C8-4FBC-BE48-0B0242734A42}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{C320C927-F8C8-4FBC-BE48-0B0242734A42}.Release|x86.ActiveCfg = Release|Any CPU
+		{C320C927-F8C8-4FBC-BE48-0B0242734A42}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 13
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://meligo.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = CamlDesigner2013\\CamlDesigner2013.csproj
+		SccProjectName1 = CamlDesigner2013
+		SccLocalPath1 = CamlDesigner2013
+		SccProjectUniqueName2 = BPoint.Common\\BPoint.Common.csproj
+		SccProjectName2 = BPoint.Common
+		SccLocalPath2 = BPoint.Common
+		SccProjectUniqueName3 = BPoint.DataAccess.WebServices\\BPoint.DataAccess.WebServices.csproj
+		SccProjectName3 = BPoint.DataAccess.WebServices
+		SccLocalPath3 = BPoint.DataAccess.WebServices
+		SccProjectUniqueName4 = CamlDesigner.BusinessObjects\\CamlDesigner.BusinessObjects.csproj
+		SccProjectName4 = CamlDesigner.BusinessObjects
+		SccLocalPath4 = CamlDesigner.BusinessObjects
+		SccProjectUniqueName5 = BPoint.DataAccess.SP2013.ClientObjectModel\\BPoint.DataAccess.SP2013.ClientObjectModel.csproj
+		SccProjectName5 = BPoint.DataAccess.SP2013.ClientObjectModel
+		SccLocalPath5 = BPoint.DataAccess.SP2013.ClientObjectModel
+		SccProjectUniqueName6 = CamlDesigner2013.HTMLPreview\\CamlDesigner2013.PreviewControl.csproj
+		SccProjectName6 = CamlDesigner2013.HTMLPreview
+		SccLocalPath6 = CamlDesigner2013.HTMLPreview
+		SccProjectUniqueName7 = BPoint.DataAccess.Powershell\\BPoint.DataAccess.Powershell.csproj
+		SccProjectName7 = BPoint.DataAccess.Powershell
+		SccLocalPath7 = BPoint.DataAccess.Powershell
+		SccProjectUniqueName8 = CDDeployment\\CDDeployment.csproj
+		SccProjectName8 = CDDeployment
+		SccLocalPath8 = CDDeployment
+		SccProjectUniqueName9 = BPoint.DataAccess.SPLync\\BPoint.DataAccess.SPLinq.csproj
+		SccProjectName9 = BPoint.DataAccess.SPLync
+		SccLocalPath9 = BPoint.DataAccess.SPLync
+		SccProjectUniqueName10 = CamlDesigner2013.Web\\CamlDesigner2013.Web.csproj
+		SccProjectName10 = CamlDesigner2013.Web
+		SccLocalPath10 = CamlDesigner2013.Web
+		SccProjectUniqueName11 = ClaimsAuth\\ClaimsAuth.csproj
+		SccProjectName11 = ClaimsAuth
+		SccLocalPath11 = ClaimsAuth
+		SccProjectUniqueName12 = BPoint.DataAccess.SP2013.ServerObjectModel\\BPoint.DataAccess.SP2013.ServerObjectModel.csproj
+		SccProjectName12 = BPoint.DataAccess.SP2013.ServerObjectModel
+		SccLocalPath12 = BPoint.DataAccess.SP2013.ServerObjectModel
+	EndGlobalSection
+EndGlobal

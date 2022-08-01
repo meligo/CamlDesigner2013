@@ -1,0 +1,341 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:CamlDesigner"
+    xmlns:localControls="clr-namespace:CamlDesigner.Controls"
+    xmlns:extToolkit="clr-namespace:Microsoft.Windows.Controls;assembly=WPFToolkit.Extended"
+    xmlns:wpftoolkit="clr-namespace:XamlGeneratedNamespace;assembly=WPFToolkit"
+    xmlns:toolkit="clr-namespace:Microsoft.Windows.Controls;assembly=WPFToolkit"
+    xmlns:ribbonControl="clr-namespace:Microsoft.Windows.Controls.Ribbon;assembly=RibbonControlsLibrary"
+    xmlns:vm="clr-namespace:CamlDesigner.ViewModels"
+    xmlns:controls="clr-namespace:CamlDesigner.Controls"
+	x:Class="CamlDesigner.MainScreen"
+	x:Name="Window"
+	Title="CamlDesigner"
+    Height="680"
+    Width="1024"
+    AllowsTransparency="True" Background="Transparent"  WindowStyle="None" ResizeMode="CanResizeWithGrip">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/RibbonControlsLibrary;component/Themes/office2007black.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid  SnapsToDevicePixels="True"  >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Border BorderBrush="Black" BorderThickness="1" CornerRadius="5,5,0,0" Grid.Row="0" MouseLeftButtonDown="Border_MouseLeftButtonDown" >
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0,0" StartPoint="1,1">
+                    <GradientStop Color="#FF0C2B39"/>
+                    <GradientStop Color="#FF2593C6" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Border BorderBrush="Transparent" BorderThickness="1" CornerRadius="5" >
+                <StackPanel  Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top">
+
+                    <Button x:Name="btnMinimize"  Click="ButtonMinimize_Click" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" >
+                        <Image Source="Images\minimize.ico"  Height="26" Width="26" />
+                    </Button>
+                    <Button x:Name="btnMaximize" Click="ButtonMaximize_Click" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" >
+                        <Image Source="Images\maximize.ico"  Height="26" Width="26" />
+                    </Button>
+                    <Button x:Name="btnClose"  Click="ButtonClose_Click" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" >
+                        <Image Source="Images\close.ico"  Height="26" Width="26" />
+                    </Button>
+                </StackPanel>
+            </Border>
+        </Border>
+
+        <ribbonControl:Ribbon x:Name="MainRibbon"   Grid.Row="1"   ShowQuickAccessToolbarOnTop="True" >
+            <ribbonControl:Ribbon.ApplicationMenu>
+                <ribbonControl:RibbonApplicationMenu>
+                    <ribbonControl:RibbonApplicationMenuItem x:Name="itemConnect">
+                        <ribbonControl:RibbonApplicationMenuItem.Command>
+                            <ribbonControl:RibbonCommand x:Name="amnitemConnect" LabelTitle="Connect" Executed="AmnitemConnect_Executed" LargeImageSource="/RibbonImages/Connect.png" />
+                        </ribbonControl:RibbonApplicationMenuItem.Command>
+                    </ribbonControl:RibbonApplicationMenuItem>
+                    <ribbonControl:RibbonApplicationMenuItem x:Name="itemDisconnect">
+                        <ribbonControl:RibbonApplicationMenuItem.Command>
+                            <ribbonControl:RibbonCommand x:Name="amnitemDisconnect" LabelTitle="Disconnect" Executed="AmnitemDisconnect_Executed" LargeImageSource="/RibbonImages/Disconnect.png" />
+                        </ribbonControl:RibbonApplicationMenuItem.Command>
+                    </ribbonControl:RibbonApplicationMenuItem>
+                    <Separator />
+                    <ribbonControl:RibbonApplicationMenuItem>
+                        <ribbonControl:RibbonApplicationMenuItem.Command>
+                            <ribbonControl:RibbonCommand x:Name="amnitemSaveQuery" LabelTitle="Save Query" Executed="AmnitemSaveQuery_Executed" LargeImageSource="/RibbonImages/Save.ico"/>
+                        </ribbonControl:RibbonApplicationMenuItem.Command>
+                    </ribbonControl:RibbonApplicationMenuItem>
+                    <Separator />
+                    <ribbonControl:RibbonApplicationMenuItem>
+                        <ribbonControl:RibbonApplicationMenuItem.Command>
+                            <ribbonControl:RibbonCommand x:Name="amnitemClose" LabelTitle="Close" Executed="AmnitemClose_Executed" LargeImageSource="/Images/close.ico" />
+                        </ribbonControl:RibbonApplicationMenuItem.Command>
+                    </ribbonControl:RibbonApplicationMenuItem>
+
+                </ribbonControl:RibbonApplicationMenu>
+            </ribbonControl:Ribbon.ApplicationMenu>
+
+
+            <!-- General ribbon items -->
+            <ribbonControl:RibbonTab x:Name="HomeTab" Label="Home">
+                <ribbonControl:RibbonTab.Groups>
+                    <ribbonControl:RibbonGroup Name="Connection" Tag="Connection" >
+                        <ribbonControl:RibbonGroup.Command>
+                            <ribbonControl:RibbonCommand LabelTitle="Connection" />
+                        </ribbonControl:RibbonGroup.Command>
+                        <ribbonControl:RibbonToggleButton Name="Connect" Content="Connect">
+                            <ribbonControl:RibbonToggleButton.Command>
+                                <ribbonControl:RibbonCommand x:Name="rbtnConnect" LabelTitle="Connect" Executed="RadioButtonConnect_Executed" LargeImageSource="/RibbonImages/Connect.png" />
+                            </ribbonControl:RibbonToggleButton.Command>
+                        </ribbonControl:RibbonToggleButton>
+                        <ribbonControl:RibbonToggleButton Name="Disconnect" Content="Disconnect">
+                            <ribbonControl:RibbonToggleButton.Command>
+                                <ribbonControl:RibbonCommand x:Name="rbtnDisconnect" LabelTitle="Disconnect" Executed="RadioButtonDisconnect_Executed" LargeImageSource="/RibbonImages/Disconnect.png" />
+                            </ribbonControl:RibbonToggleButton.Command>
+                        </ribbonControl:RibbonToggleButton>
+                    </ribbonControl:RibbonGroup>
+                </ribbonControl:RibbonTab.Groups>
+            </ribbonControl:RibbonTab>
+
+            <ribbonControl:RibbonTab x:Name="CamlQueryTab" Label="CAML Query" Selected="CamlQueryTab_Selected">
+                <ribbonControl:RibbonTab.Groups>
+                    <ribbonControl:RibbonGroup Name="GeneralOptionsGroup" Tag="General options" >
+                        <ribbonControl:RibbonGroup.Command>
+                            <ribbonControl:RibbonCommand LabelTitle="General options" />
+                        </ribbonControl:RibbonGroup.Command>
+                        <ribbonControl:RibbonToggleButton Name="CopyQueryButton" Content="Copy Query">
+                            <ribbonControl:RibbonToggleButton.Command>
+                                <ribbonControl:RibbonCommand x:Name="rbtnCopyQuery" LabelTitle="Copy" Executed="RadioButtonCopyQuery_Executed" LargeImageSource="/RibbonImages/ExecuteQuery.png" />
+                            </ribbonControl:RibbonToggleButton.Command>
+                        </ribbonControl:RibbonToggleButton>
+                        <ribbonControl:RibbonToggleButton Name="ExecuteQueryButton" Content="Execute Query">
+                            <ribbonControl:RibbonToggleButton.Command>
+                                <ribbonControl:RibbonCommand x:Name="rbtnExecuteQuery" LabelTitle="Execute" Executed="RadioButtonExecuteQuery_Executed"  LargeImageSource="/RibbonImages/Wheels1.ico" />
+                            </ribbonControl:RibbonToggleButton.Command>
+                        </ribbonControl:RibbonToggleButton>
+                        <ribbonControl:RibbonToggleButton Name="ClearQueryButton" Content="Clear Query">
+                            <ribbonControl:RibbonToggleButton.Command>
+                                <ribbonControl:RibbonCommand x:Name="rbtnClearQuery" LabelTitle="Clear" Executed="RadioButtonClearQuery_Executed" LargeImageSource="/RibbonImages/CloseQuery.png"/>
+                            </ribbonControl:RibbonToggleButton.Command>
+                        </ribbonControl:RibbonToggleButton>
+                    </ribbonControl:RibbonGroup>
+
+                    <ribbonControl:RibbonGroup Name="QueryTypeGroup" Tag="Query Type" >
+                        <ribbonControl:RibbonGroup.Command>
+                            <ribbonControl:RibbonCommand LabelTitle="CAML Query Type" />
+                        </ribbonControl:RibbonGroup.Command>
+                        <ribbonControl:RibbonToggleButton Name="CamlQueryButton" Content="CAML Query" IsChecked="True">
+                            <ribbonControl:RibbonToggleButton.Command>
+                                <ribbonControl:RibbonCommand x:Name="CamlQueryCommand" LabelTitle="CAML Query" Executed="CamlQueryCommand_Executed"  LargeImageSource="/RibbonImages/Text.ico" />
+                            </ribbonControl:RibbonToggleButton.Command>
+                        </ribbonControl:RibbonToggleButton>
+                        <ribbonControl:RibbonToggleButton Name="SiteDataQueryButton" Content="Site Data Query">
+                            <ribbonControl:RibbonToggleButton.Command>
+                                <ribbonControl:RibbonCommand x:Name="SiteDataQueryCommand" LabelTitle="Site Data Query" Executed="SiteDataQueryCommand_Executed"  LargeImageSource="/RibbonImages/Text.ico" />
+                            </ribbonControl:RibbonToggleButton.Command>
+                        </ribbonControl:RibbonToggleButton>
+                    </ribbonControl:RibbonGroup>
+
+                    <ribbonControl:RibbonGroup Name="CamlQueryGroup" Tag="CAML Query" >
+                        <ribbonControl:RibbonGroup.Command>
+                            <ribbonControl:RibbonCommand LabelTitle="CAML Query" />
+                        </ribbonControl:RibbonGroup.Command>
+                        <ribbonControl:RibbonToggleButton Name="ViewFieldsButton" Content="ViewFields" >
+                            <ribbonControl:RibbonToggleButton.Command>
+                                <ribbonControl:RibbonCommand x:Name="ViewFieldsCommand" LabelTitle="ViewFields" Executed="ViewFieldsCommand_Executed"  LargeImageSource="/RibbonImages/Text.ico" />
+                            </ribbonControl:RibbonToggleButton.Command>
+                        </ribbonControl:RibbonToggleButton>
+                        <ribbonControl:RibbonToggleButton Name="QueryWhereButton" Content="Where">
+                            <ribbonControl:RibbonToggleButton.Command>
+                                <ribbonControl:RibbonCommand x:Name="QueryWhereCommand" LabelTitle="Where" Executed="QueryWhereCommand_Executed"  LargeImageSource="/RibbonImages/Text.ico" />
+                            </ribbonControl:RibbonToggleButton.Command>
+                        </ribbonControl:RibbonToggleButton>
+                        <ribbonControl:RibbonToggleButton Name="QueryOrderByButton" Content="OrderBy">
+                            <ribbonControl:RibbonToggleButton.Command>
+                                <ribbonControl:RibbonCommand x:Name="QueryOrderByCommand" LabelTitle="OrderBy" Executed="QueryOrderByCommand_Executed"  LargeImageSource="/RibbonImages/Text.ico" />
+                            </ribbonControl:RibbonToggleButton.Command>
+                        </ribbonControl:RibbonToggleButton>
+                        <ribbonControl:RibbonToggleButton Name="QueryOptionsButton" Content="Query Options">
+                            <ribbonControl:RibbonToggleButton.Command>
+                                <ribbonControl:RibbonCommand x:Name="QueryOptionsCommand" LabelTitle="Query Options" Executed="QueryOptionsCommand_Executed"  LargeImageSource="/RibbonImages/Text.ico" />
+                            </ribbonControl:RibbonToggleButton.Command>
+                        </ribbonControl:RibbonToggleButton>
+                    </ribbonControl:RibbonGroup>
+
+                    <ribbonControl:RibbonGroup Name="CAMLCodeSnippetGroup" Tag="CAML Code Snippets" >
+                        <ribbonControl:RibbonGroup.Command>
+                            <ribbonControl:RibbonCommand LabelTitle="CAML Code" />
+                        </ribbonControl:RibbonGroup.Command>
+                        <ribbonControl:RibbonToggleButton Name="CamlButton" Content="CAML" IsChecked="True">
+                            <ribbonControl:RibbonToggleButton.Command>
+                                <ribbonControl:RibbonCommand x:Name="CamlCommand" LabelTitle="CAML" Executed="CamlCommand_Executed"  LargeImageSource="/RibbonImages/Text.ico" />
+                            </ribbonControl:RibbonToggleButton.Command>
+                        </ribbonControl:RibbonToggleButton>
+                    </ribbonControl:RibbonGroup>
+
+                    <ribbonControl:RibbonGroup Name="CodeSnippetGroup" Tag="Code Snippets" >
+                        <ribbonControl:RibbonGroup.Command>
+                            <ribbonControl:RibbonCommand LabelTitle="Code Snippets" />
+                        </ribbonControl:RibbonGroup.Command>
+                        <ribbonControl:RibbonToggleButton Name="ServerOMButton" Content="Server OM">
+                            <ribbonControl:RibbonToggleButton.Command>
+                                <ribbonControl:RibbonCommand x:Name="ServerOMCommand" LabelTitle="Server OM" Executed="ServerOMCommand_Executed"  LargeImageSource="/RibbonImages/Text.ico" />
+                            </ribbonControl:RibbonToggleButton.Command>
+                        </ribbonControl:RibbonToggleButton>
+                        <ribbonControl:RibbonToggleButton Name="ClientOMForDotnetButton" Content="Client OM for .NET">
+                            <ribbonControl:RibbonToggleButton.Command>
+                                <ribbonControl:RibbonCommand x:Name="ClientOMForDotnetCommand" LabelTitle="Client OM for .NET" Executed="ClientOMForDotnetCommand_Executed"  LargeImageSource="/RibbonImages/Text.ico" />
+                            </ribbonControl:RibbonToggleButton.Command>
+                        </ribbonControl:RibbonToggleButton>
+                        <ribbonControl:RibbonToggleButton Name="WebServicesButton" Content="Web Services">
+                            <ribbonControl:RibbonToggleButton.Command>
+                                <ribbonControl:RibbonCommand x:Name="WebServicesCommand" LabelTitle="Web Services" Executed="WebServicesCommand_Executed"  LargeImageSource="/RibbonImages/Text.ico" />
+                            </ribbonControl:RibbonToggleButton.Command>
+                        </ribbonControl:RibbonToggleButton>
+                    </ribbonControl:RibbonGroup>
+                    <ribbonControl:RibbonGroup Name="CodeSnippetGroupClients" Tag="Code Snippets" >
+                        <ribbonControl:RibbonToggleButton Name="ClientOMForEcmaScriptButton" Content="Client OM for EcmaScript" IsEnabled="False" Visibility="Hidden">
+                            <ribbonControl:RibbonToggleButton.Command>
+                                <ribbonControl:RibbonCommand x:Name="ClientOMForEcmaScriptCommand" LabelTitle="Client OM for EcmaScript" Executed="ClientOMForEcmaScriptCommand_Executed"  LargeImageSource="/RibbonImages/Text.ico" />
+                            </ribbonControl:RibbonToggleButton.Command>
+                        </ribbonControl:RibbonToggleButton>
+                        <ribbonControl:RibbonToggleButton Name="ClientOMForRestJsonButton" Content="Client OM for REST/Json" >
+                            <ribbonControl:RibbonToggleButton.Command>
+                                <ribbonControl:RibbonCommand x:Name="ClientOMForRestJsonCommand" LabelTitle="Client OM for REST/Json" Executed="ClientOMForRestJsonCommand_Executed"  LargeImageSource="/RibbonImages/Text.ico"  />
+                            </ribbonControl:RibbonToggleButton.Command>
+                        </ribbonControl:RibbonToggleButton>
+                        <ribbonControl:RibbonToggleButton Name="ClientOMForSilverlightButton" Content="Client OM for Silverlight"  IsEnabled="False" Visibility="Hidden">
+                            <ribbonControl:RibbonToggleButton.Command>
+                                <ribbonControl:RibbonCommand x:Name="ClientOMForSilverlightCommand" LabelTitle="Client OM for Silverlight" Executed="ClientOMForSilverlightCommand_Executed"  LargeImageSource="/RibbonImages/Text.ico"  />
+                            </ribbonControl:RibbonToggleButton.Command>
+                        </ribbonControl:RibbonToggleButton>
+                    </ribbonControl:RibbonGroup>
+
+                    <ribbonControl:RibbonGroup Name="LanguageGroup" Tag="Language" Visibility="Hidden" >
+                        <ribbonControl:RibbonGroup.Command>
+                            <ribbonControl:RibbonCommand LabelTitle="Language" />
+                        </ribbonControl:RibbonGroup.Command>
+                        <ribbonControl:RibbonToggleButton Name="CSharpButton" Content="Csharp" IsChecked="True">
+                            <ribbonControl:RibbonToggleButton.Command>
+                                <ribbonControl:RibbonCommand x:Name="CSharpCommand" LabelTitle="C#" Executed="CSharpCommand_Executed"  LargeImageSource="/RibbonImages/Text.ico" />
+                            </ribbonControl:RibbonToggleButton.Command>
+                        </ribbonControl:RibbonToggleButton>
+                    </ribbonControl:RibbonGroup>
+
+                </ribbonControl:RibbonTab.Groups>
+            </ribbonControl:RibbonTab>
+            <ribbonControl:RibbonTab x:Name="AboutTab" Label="About Us" Selected="AboutTab_Selected">
+                <ribbonControl:RibbonTab.Groups>
+                    <ribbonControl:RibbonGroup Name="Information" Tag="About" >
+                        <ribbonControl:RibbonGroup.Command>
+                            <ribbonControl:RibbonCommand LabelTitle="About Us" />
+                        </ribbonControl:RibbonGroup.Command>
+                        <ribbonControl:RibbonToggleButton Name="About" Content="Information" IsChecked="False">
+                            <ribbonControl:RibbonToggleButton.Command>
+                                <ribbonControl:RibbonCommand x:Name="AboutUs" LabelTitle="Info" Executed="AboutUs_Executed"  LargeImageSource="/RibbonImages/Text.ico" />
+                            </ribbonControl:RibbonToggleButton.Command>
+                        </ribbonControl:RibbonToggleButton>
+                    </ribbonControl:RibbonGroup>
+                </ribbonControl:RibbonTab.Groups>
+            </ribbonControl:RibbonTab>
+
+        </ribbonControl:Ribbon>
+        <Border BorderBrush="Black" BorderThickness="1" CornerRadius="5" Background="#15516C"  Grid.Row="2">
+            <Border BorderBrush="#55FFFFFF" BorderThickness="1" CornerRadius="5">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200" MaxWidth="400" MinWidth="150" />
+                        <ColumnDefinition Width="5" />
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+
+
+                    <TreeView Name="tree" Grid.Column="0" ItemsSource="{Binding SharePointViewModels}" >
+                        <TreeView.ItemContainerStyle>
+                            <!-- This Style binds a TreeViewItem to a TreeViewItemViewModel. -->
+                            <Style TargetType="{x:Type TreeViewItem}">
+                                <Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay}" />
+                                <Setter Property="IsSelected" Value="{Binding IsSelected, Mode=TwoWay}" />
+                                <Setter Property="FontWeight" Value="Normal" />
+                                <Style.Triggers>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter Property="FontWeight" Value="Bold" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TreeView.ItemContainerStyle>
+
+                        <TreeView.Resources>
+                            <HierarchicalDataTemplate 
+                                DataType="{x:Type vm:SharePointViewModel}" ItemsSource="{Binding ListViewModels}">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding SiteUrl}" />
+                                </StackPanel>
+                            </HierarchicalDataTemplate>
+
+                            <HierarchicalDataTemplate 
+                                DataType="{x:Type vm:ListViewModel}" >
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Width="16" Height="16" Margin="3,0" Source="Images\sharepointfoundation16.png" />
+                                    <TextBlock Text="{Binding Title}" />
+                                </StackPanel>
+                            </HierarchicalDataTemplate>
+
+                        </TreeView.Resources>
+                    </TreeView>
+
+                    <GridSplitter HorizontalAlignment="Right" 
+                                  VerticalAlignment="Stretch" 
+                                  Grid.Column="1" ResizeBehavior="PreviousAndNext"
+                                  Width="5" Background="#FFBCBCBC"/>
+
+                    <Grid Grid.Column="2" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="5" />
+                            <RowDefinition Height="200" />
+                        </Grid.RowDefinitions>
+                        <Border x:Name="ChildControlsBorder" CornerRadius="3" Margin="1" Grid.Row="0" BorderBrush="Ivory" BorderThickness="1">
+                            <StackPanel x:Name="ChildControlsPanel" Orientation="Horizontal">
+                                <local:QueryControl x:Name="QueryControl" Margin="5" HorizontalAlignment="Left" Visibility="Collapsed" />
+                            </StackPanel>
+                        </Border>
+
+                        <GridSplitter Grid.Row="1" ResizeBehavior="PreviousAndNext" VerticalAlignment="Stretch"
+                                      HorizontalAlignment="Stretch" 
+                                      Background="#FFBCBCBC"/>
+                        <Grid Grid.Row="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="650" MaxWidth="1000" MinWidth="300" />
+                                <ColumnDefinition Width="5" />
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <DockPanel LastChildFill="True" >
+                                <Button  x:Name="ExecuteButton" Content="Execute" Click="ExecuteButton_Click" DockPanel.Dock="Right"   />
+                                <ScrollViewer  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto">
+                                    <TextBox x:Name="CAMLTextBlock" BorderBrush="Transparent" TextWrapping="Wrap" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                                </ScrollViewer>
+                            </DockPanel>
+                            <GridSplitter Grid.Column="1" ResizeBehavior="PreviousAndNext" VerticalAlignment="Stretch"
+                                      HorizontalAlignment="Stretch" 
+                                      Background="#FFBCBCBC"/>
+                            <toolkit:DataGrid Grid.Column="3"  x:Name="CAMLGridView" ColumnHeaderHeight="25" AutoGenerateColumns="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Border>
+        </Border>
+        <extToolkit:BusyIndicator IsBusy="false" x:Name="_busyIndicator" BusyContent="Please fill in information" MouseLeftButtonDown="Border_MouseLeftButtonDown" >
+            <ContentControl />
+        </extToolkit:BusyIndicator>
+    </Grid>
+</Window>

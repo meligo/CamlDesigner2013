@@ -1,0 +1,82 @@
+﻿<UserControl x:Class="CamlDesigner.Controls.OperatorControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:toolkit="clr-namespace:Microsoft.Windows.Controls;assembly=WPFToolkit"
+             Width="40" Height="40">
+    <Canvas HorizontalAlignment="Center" Width="40" Height="40">
+        <Canvas.Triggers>
+            <EventTrigger RoutedEvent="Canvas.MouseEnter">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation 
+                              Duration="0:0:0.5" From="0.0" To="0.3" 
+                              Storyboard.TargetProperty="(Opacity)"
+                              Storyboard.TargetName="OverlayEllipse"/>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+            <EventTrigger RoutedEvent="Canvas.MouseLeave">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation 
+                              Duration="0:0:0.5" From="0.3" To="0.0" 
+                              Storyboard.TargetProperty="(Opacity)"
+                              Storyboard.TargetName="OverlayEllipse"/>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </Canvas.Triggers>
+
+        <Ellipse Canvas.Left="0" Canvas.Top="0" Width="40" Height="40" Stroke="#ADB9CD" StrokeThickness="0.5" >
+            <Ellipse.Fill>
+                <RadialGradientBrush GradientOrigin="0.5,0.655">
+                    <RadialGradientBrush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="1" ScaleY="1"/>
+                            <SkewTransform AngleX="0" AngleY="0"/>
+                            <RotateTransform Angle="0"/>
+                            <TranslateTransform X="0.003" Y="0.336"/>
+                        </TransformGroup>
+                    </RadialGradientBrush.RelativeTransform>
+                    <GradientStop Color="#BCC7D8" Offset="0"/>
+                    <GradientStop Color="#4D6082" Offset="1"/>
+                </RadialGradientBrush>
+            </Ellipse.Fill>
+        </Ellipse>
+        <Ellipse x:Name="OverlayEllipse" Canvas.Left="0" Canvas.Top="0" Width="40" Height="40" Opacity="0" Fill="AliceBlue" />
+        <TextBlock x:Name="OperatorTextBlock" Canvas.Top="15" Canvas.Left="0" Width="40" TextAlignment="Center" Foreground="White" Text="=">
+            <TextBlock.ContextMenu>
+                <!-- This could also be a solution to the content menuitem: http://channel9.msdn.com/Tags/puzzle/RSS -->
+                <!-- or based on this one: http://stackoverflow.com/questions/1763763/wpf-menu-item-with-image -->
+                <ContextMenu>
+                    <ContextMenu.Resources>
+                        <Style x:Key="MenuItemStyle" TargetType="MenuItem">
+                            <Setter Property="MenuItem.Template">
+                                <Setter.Value>
+                                    <ControlTemplate>
+                                        <TextBlock Width="140" Height="18" Foreground="Black" TextAlignment="Left" Margin="15,1" Text="{TemplateBinding MenuItem.Header}" />                                                                            
+                                    </ControlTemplate>
+                                </Setter.Value>                                
+                            </Setter>
+                        </Style>
+                    </ContextMenu.Resources>
+                    <MenuItem Header="Equal" Style="{StaticResource MenuItemStyle}" Click="MenuItem_Click" />
+                    <MenuItem Header="Not equal" Style="{StaticResource MenuItemStyle}" Click="MenuItem_Click" />
+                    <MenuItem Header="Greater than" Style="{StaticResource MenuItemStyle}" Click="MenuItem_Click" />
+                    <MenuItem Header="Greater than or equal" Style="{StaticResource MenuItemStyle}" Click="MenuItem_Click" />
+                    <MenuItem Header="Less than" Style="{StaticResource MenuItemStyle}" Click="MenuItem_Click" />
+                    <MenuItem Header="Less than or equal" Style="{StaticResource MenuItemStyle}" Click="MenuItem_Click" />
+                    <MenuItem Header="Is null" Style="{StaticResource MenuItemStyle}" Click="MenuItem_Click" />
+                    <MenuItem Header="Is not null" Style="{StaticResource MenuItemStyle}" Click="MenuItem_Click" />
+                    <MenuItem Header="Begins with" Style="{StaticResource MenuItemStyle}" Click="MenuItem_Click" />
+                    <MenuItem Header="Contains" Style="{StaticResource MenuItemStyle}" Click="MenuItem_Click" />
+                    <MenuItem Header="In" x:Name="InMenuItem" Style="{StaticResource MenuItemStyle}" Click="MenuItem_Click" />
+                    <MenuItem Header="Includes" x:Name="IncludesMenuItem" Style="{StaticResource MenuItemStyle}" Click="MenuItem_Click" />
+                    <MenuItem Header="Not includes" x:Name="NotIncludesMenuItem" Style="{StaticResource MenuItemStyle}" Click="MenuItem_Click" />
+                </ContextMenu>
+            </TextBlock.ContextMenu>
+        </TextBlock>
+    </Canvas>
+</UserControl>
